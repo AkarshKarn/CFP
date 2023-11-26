@@ -1,17 +1,34 @@
 package Day6PracticeProblems;
 
-public class CouponProgram {
-    char[] chars="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ123456789".toCharArray();
-    int max=100000000;
-    double random=(Math.random()*max);
-    StringBuffer sb=new StringBuffer();
+import java.util.LinkedHashSet;
+import java.util.Random;
+import java.util.Scanner;
+import java.util.Set;
 
-		while (double random>0)
-    {
-        sb.append(chars[random % chars.length]);
-        random /= chars.length;
+public class CouponProgram {
+
+    public static void generateCoupon(){
+        Random ran = new Random();
+
+        Scanner sc= new Scanner(System.in);
+        Set<Integer> set = new LinkedHashSet<>();
+
+        System.out.println("Enter the total number of random digits of the coupon:");
+        int size=sc.nextInt();
+
+        for (int i=0;i<size;i++){
+            set.add(ran.nextInt(1000)+1);
+
+        }
+        System.out.print("Random Coupon Number:"+" "+set+",");
+
     }
 
-    String couponCode=sb.toString();
-		System.out.println("Coupon Code: "+couponCode);
+
+    public static void main(String[] args) {
+        generateCoupon();
+    }
 }
+
+
+
