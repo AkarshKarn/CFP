@@ -6,15 +6,15 @@ public class Stopwatch {
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);
 
-        long start,stop;
+        double start,stop;
         double time;
 
         System.out.println("Enter any input to start the time:");
-        char str=sc.next().charAt(0);
+        int a=sc.nextInt();
         start=System.currentTimeMillis();
 
         System.out.println("Enter any input to stop the time:");
-        char stp=sc.next().charAt(0);
+        int b=sc.nextInt();
         stop=System.currentTimeMillis();
 
         time=(stop-start);
